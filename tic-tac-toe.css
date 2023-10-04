@@ -13,7 +13,7 @@
 }
 .full-cont{
     background-color: black;
-    color: blueviolet;
+    color: rgb(238, 14, 137);
 }
 .player1-style{
     border-radius: 50%;
@@ -38,4 +38,7 @@
 }
 .text-align{
     text-align: end;
+}
+.win{
+    color: rgba(247, 36, 211, 0.9);
 }

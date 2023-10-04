@@ -1,11 +1,12 @@
-turn=0;
-player1list=[];
-player2list=[];
-win1=0;
-win2=0;
+ticTacToeObject={turn:0,
+    player1list:[],
+    player2list:[],
+    win1:0,
+    win2:0}
+let {turn,player1list,player2list,win1,win2}=ticTacToeObject;
+
 document.querySelectorAll(".js-board")
     .forEach((poss,index)=>{
-        console.log(poss);
         poss.addEventListener("click",()=>{check(poss,index+1)})
     });
 
@@ -21,7 +22,7 @@ function check(poss,i){
                     
                     setTimeout(() => {
                         document.querySelectorAll(".js-board")
-                        .forEach((poss,index)=>{
+                        .forEach((poss)=>{
                             poss.classList.remove("player1-style")
                             poss.classList.remove("player2-style")
                             poss.classList.remove("style")
@@ -30,7 +31,7 @@ function check(poss,i){
                         })
                     }, 2000)
                     document.querySelectorAll(".js-board")
-                        .forEach((poss,index)=>{
+                        .forEach((poss)=>{
                             poss.classList.add("style")
                             
                         });
@@ -39,12 +40,14 @@ function check(poss,i){
                     player2list=[];
                     win1++;
                     document.querySelector(".js-win1").innerHTML=`Win : ${win1}`;
+
                 }
             }
             document.querySelector(".js-turn2").innerHTML="turn : your turn";
             document.querySelector(".js-turn1").innerHTML="turn : ";
             
             turn++;
+
         }
         else{
             alert("the position is already occupaid!!!");
@@ -76,7 +79,7 @@ function check(poss,i){
                     player2list=[];
                     win2++;
                     document.querySelector(".js-win2").innerHTML=`Win : ${win2}`;
-
+                    
                     
                 }
             }
@@ -120,3 +123,4 @@ function result(list){
         return false;
     }
 }
+
